@@ -92,7 +92,6 @@ public class CorniceFileChooser extends StudiumWindow{
 				{
 					for(String s : getFilter().split(","))
 					{
-						System.err.println();
 						if(f.extension().equalsIgnoreCase(s.trim()))
 						{
 							files.add(f);

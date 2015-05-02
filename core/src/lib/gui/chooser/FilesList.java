@@ -35,12 +35,12 @@ public class FilesList extends CorniceList{
 	}
 	
 	//Draw element
-	Texture folderIcon = new Texture(Gdx.files.classpath("folder.png"));
-	Texture fileIcon = new Texture(Gdx.files.classpath("file.png"));
-	Texture imageIcon = new Texture(Gdx.files.classpath("image.png"));
-	Texture musicIcon = new Texture(Gdx.files.classpath("music.png"));
-	Texture execIcon = new Texture(Gdx.files.classpath("executable.png"));
-	Texture shortcutIcon = new Texture(Gdx.files.classpath("shortcut.png"));
+	Texture folderIcon = new Texture(Gdx.files.classpath("images/folder.png"));
+	Texture fileIcon = new Texture(Gdx.files.classpath("images/file.png"));
+	Texture imageIcon = new Texture(Gdx.files.classpath("images/image.png"));
+	Texture musicIcon = new Texture(Gdx.files.classpath("images/music.png"));
+	Texture execIcon = new Texture(Gdx.files.classpath("images/executable.png"));
+	Texture shortcutIcon = new Texture(Gdx.files.classpath("images/shortcut.png"));
 	public void drawElement(Object element, SpriteBatch batch, ShapeRenderer renderer, Vector2 position) 
 	{
 		

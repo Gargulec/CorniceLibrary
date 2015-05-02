@@ -44,7 +44,7 @@ public class StudiumComponent {
 	}
 	
 	//Drawing component
-	protected Texture t = new Texture(Gdx.files.classpath("component.png"));
+	protected Texture t = new Texture(Gdx.files.classpath("images/component.png"));
 	public void draw(SpriteBatch batch, ShapeRenderer renderer)
 	{
 		if(isVisible())
