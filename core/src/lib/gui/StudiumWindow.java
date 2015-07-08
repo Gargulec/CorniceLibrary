@@ -6,6 +6,9 @@ public class StudiumWindow extends StudiumComponent{
 	public StudiumWindow(float x, float y, float width, float height)
 	{
 		super(x, y, width, height);
+		
+		setActive(false);
+		setVisible(false);
 	}
 	
 	//Adding new component
