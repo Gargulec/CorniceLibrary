@@ -11,7 +11,7 @@
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
-        <javaElement handleIdentifier="=CorniceLibrary-core/src"/>
         <file path="/CorniceLibrary-core/.project"/>
+        <javaElement handleIdentifier="=CorniceLibrary-core/src"/>
     </selectedElements>
 </jardesc>

@@ -9,7 +9,8 @@ import com.badlogic.gdx.graphics.Pixmap.Filter;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.stbtt.TrueTypeFontFactory;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class StudiumLabel extends StudiumComponent{
@@ -94,12 +95,13 @@ public class StudiumLabel extends StudiumComponent{
 	}
 	
 	//Creating font fromTTF
-	public static BitmapFont createFontFromTTF(FileHandle ttfFile, float size)
+	public static BitmapFont createFontFromTTF(FileHandle ttfFile, int size)
 	{
-		String FONT_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789][_!$%#@|\\/?-+=()*&.:;,{}\"´`'<>";
-		BitmapFont f = TrueTypeFontFactory.createBitmapFont(ttfFile, FONT_CHARACTERS, 1920, 1080, size, 1920, 1080);
-		f.setColor(new Color(1, 1, 1, 1));
-		f.getRegion().getTexture().setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
+		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(ttfFile);
+		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
+		parameter.size = size;
+		BitmapFont f = generator.generateFont(parameter);
+		generator.dispose();
 		return f;
 	}
 	

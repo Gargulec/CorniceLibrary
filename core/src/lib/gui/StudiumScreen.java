@@ -43,10 +43,8 @@ public class StudiumScreen extends InputAdapter implements Screen{
 		batch = new SpriteBatch();
 		shapeRenderer = new ShapeRenderer();
 		
-		camera = new OrthographicCamera();
-		viewport = new FitViewport(1920, 1080, camera);
-		viewport.apply();
-		camera.translate(new Vector2(1920/2, 1080/2));
+		camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		camera.translate(new Vector2(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2));
 	}
 	
 	public void render(float delta) 
@@ -77,7 +75,7 @@ public class StudiumScreen extends InputAdapter implements Screen{
 	{
 		//Drawing background
 		if(bgImg != null)
-			batch.draw(bgImg, 0, 0);
+			batch.draw(bgImg, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		//Drawing components
 		for(StudiumComponent c : components)
 			c.draw(batch, shapeRenderer);
@@ -133,7 +131,11 @@ public class StudiumScreen extends InputAdapter implements Screen{
 	}
 	
 	//Resize of screen
-	public void resize(int width, int height){}
+	public void resize(int width, int height)
+	{
+		camera = new OrthographicCamera(width, height);
+		camera.translate(new Vector2(width/2, height/2));
+	}
 	
 	//Screen closed
 	public void closed()
